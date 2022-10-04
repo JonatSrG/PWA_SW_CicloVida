@@ -32,16 +32,22 @@ self.addEventListener('activate', event => {
 //fetch manejo de petiviones hhtttpp
 self.addEventListener('fetch', event => {
     //aplicar estrategias del cache
-    console.log('sw: ', event.request.url);
+//    console.log('sw: ', event.request.url);
 
-    if (event.request.url.includes('https://reqre.in/')) {
+//    if (event.request.url.includes('https://reqre.in/')) {
 
-        const resp = new Response(`{
-            ok: false, mensaje: 'jajjaja'
-        }`);
-        event.respondWith(resp);
-    }
+//        const resp = new Response(`{
+//            ok: false, mensaje: 'jajjaja'
+//        }`);
+//        event.respondWith(resp);
+//    }
 });
 
+//Sync: recuperar conexion a internet
+self.addEventListener('sync', event => {
 
+    console.log('Tenemos conexion!');
+    console.log(event);
+    console.log(event.tag);
+});
 
